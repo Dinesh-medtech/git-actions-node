@@ -5,8 +5,11 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: .github/workflows/reusable-workflow.yml
-    with:
-      environment: dev
-    secrets:
-      Secret: ${{ secrets.TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Reusable Workflow
+        uses: ./.github/workflows/reusable-workflow.yml@main  # Replace 'main' with your branch or tag
+        with:
+          environment: dev
+        secrets:
+          Secret: ${{ secrets.TOKEN }}
