@@ -12,6 +12,8 @@ jobs:
         node-version: [14, 16, 18]
 
     steps:
+      - name: variable
+        run : echo "the value of variable is ${{dev.var}}"
       - name: Checkout code
         uses: actions/checkout@v3
 
