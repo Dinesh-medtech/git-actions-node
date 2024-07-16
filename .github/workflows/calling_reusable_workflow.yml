@@ -1,0 +1,12 @@
+name: calling the reuseable
+on : 
+ workflow_dispatch:
+ 
+ jobs:
+
+    call-reusable-workflow:
+      uses : ./.github/workflows/reusable-workflow.yml
+        with:
+          environment : dev
+        Secrets:
+         secret: ${{secrets.TOKEN}}
