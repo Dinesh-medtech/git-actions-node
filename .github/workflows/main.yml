@@ -6,19 +6,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    environment: dev
-
 
     strategy:
       matrix:
         node-version: [14, 16, 18]
 
     steps:
-      - name: variable
-        run : echo "the value of variable is ${{vars.VAR1}}"
-      - name: Secrets
-        run : echo "the value of secrets is ${{secrets.TOKEN}}"
-        
       - name: Checkout code
         uses: actions/checkout@v3
 
