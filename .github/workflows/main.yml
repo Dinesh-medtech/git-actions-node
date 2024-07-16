@@ -34,5 +34,5 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        if : env.VAR1 == '1234'
+        if : ${{vars.VAR1}} == '1234'
         run: npm test
