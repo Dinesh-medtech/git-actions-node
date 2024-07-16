@@ -1,26 +1,25 @@
-name : reuseable workflow
+name: Reusable Workflow
+
 on:
   workflow_call:
     inputs:
-      environment :
-       default: 'dev'
-       required : true
+      environment:
+        default: 'dev'
+        required: true
     secrets:
       Secret:
-      required: true
+        required: true
 
-      jobs:
-        build:
-          runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-          steps:
-            -name : checkout
-             uses : actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-            -name : environment
-              run : echo 'envirnment is ${{inputs.environment}}'
+      - name: Environment
+        run: echo "Environment is ${{ inputs.environment }}"
 
-              -name : secret
-                run: echo "the secret is ${{secrets.secret}}"
-
-            
+      - name: Secret
+        run: echo "The secret is ${{ secrets.Secret }}"
