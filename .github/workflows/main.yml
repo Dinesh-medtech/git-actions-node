@@ -13,7 +13,8 @@ jobs:
 
     steps:
       - name: variable
-        run : echo "the value of variable is ${{vars.VAR}}"
+        run : echo "the value of variable is ${{vars.VAR1}}"
+        
       - name: Checkout code
         uses: actions/checkout@v3
 
