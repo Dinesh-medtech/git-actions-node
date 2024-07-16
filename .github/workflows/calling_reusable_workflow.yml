@@ -2,14 +2,17 @@ name: Calling the Reusable Workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
 
 jobs:
   call-reusable-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Call Reusable Workflow
-        uses: ./.github/workflows/reusable-workflow.yml@main  # Replace 'main' with your branch or tag
+        uses: ./.github/workflows/reusable-workflow.yml@main
         with:
-          environment: dev
-        secrets:
+          environment: ${{ github.event.inputs.environment }}
           Secret: ${{ secrets.TOKEN }}
