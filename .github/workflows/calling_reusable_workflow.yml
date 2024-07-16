@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call Reusable Workflow
-        uses: .github/workflows/reusable-workflow.yml@main
+        uses: ./.github/workflows/reusable-workflow.yml@main
         with:
           environment: ${{ github.event.inputs.environment }}
           Secret: ${{ secrets.TOKEN }}
