@@ -1,0 +1,19 @@
+{
+  "name": "simple-node-project",
+  "version": "1.0.0",
+  "description": "A simple Node.js project",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'Build step not defined'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0",
+    "supertest": "^6.1.3"
+  }
+}
