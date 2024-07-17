@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-reusable-workflow:
-        uses: Dinesh-medtech/git-actions-node/.github/workflows/reusable-workflow.yml@main
+        uses: Dinesh-medtech/git-actions-node/.github/workflows/reusable_workflow.yml@main
         with:
           environment: ${{ github.event.inputs.environment }}
           Secret: ${{ secrets.TOKEN }}
