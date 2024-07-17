@@ -1,0 +1,14 @@
+name : passing variable between jobs
+
+on : push
+jobs:
+  jobA:
+    runs-on: ubuntu-latest
+    outputs:
+      var : ${{vars.VAR1}}
+  jobB:
+    needs : jobA
+    runs-on : ubuntu-latest
+    steps : 
+      - name : using the output from jobA
+        run : echo "${{needs.jobA.outputs.var}}"
