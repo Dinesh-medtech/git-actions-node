@@ -2,13 +2,13 @@ name: Reusable Workflow
 
 on:
   workflow_call:
-    inputs:
-      environment:
-        default: 'dev'
-        required: true
-    secrets:
-      Secret:
-        required: true
+    # inputs:
+    #   environment:
+    #     default: 'dev'
+    #     required: true
+    # secrets:
+    #   Secret:
+    #     required: true
 
 jobs:
   build:
