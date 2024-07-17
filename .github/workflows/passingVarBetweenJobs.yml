@@ -4,6 +4,7 @@ on : push
 jobs:
   jobA:
     runs-on: ubuntu-latest
+    environment : dev
     outputs:
       var : ${{vars.VAR1}}
     steps :
