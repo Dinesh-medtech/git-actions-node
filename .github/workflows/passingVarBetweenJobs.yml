@@ -1,17 +1,22 @@
-name : passing variable between jobs
+name: Passing Variables Between Jobs
 
-on : push
+on: 
+  push:
+    branches: [main]
+
 jobs:
   jobA:
     runs-on: ubuntu-latest
-    environment : dev
     outputs:
-      var : ${{vars.VAR1}}
-    steps :
-      - run : echo "empty"
+      my_var: ${{ steps.set_output.outputs.my_var }}
+    steps:
+      - name: Set output variable
+        id: set_output
+        run: echo "::set-output name=my_var::Hello, World!"
+
   jobB:
-    needs : jobA
-    runs-on : ubuntu-latest
-    steps : 
-      - name : using the output from jobA
-        run : echo "${{needs.jobA.outputs.var}}"
+    needs: jobA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use the output variable from jobA
+        run: echo "The variable from jobA is ${{ needs.jobA.outputs.my_var }}"
