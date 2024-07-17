@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       var : ${{vars.VAR1}}
+    steps :
+      - run : echo "empty"
   jobB:
     needs : jobA
     runs-on : ubuntu-latest
