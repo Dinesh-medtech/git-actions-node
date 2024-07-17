@@ -9,12 +9,9 @@ on:
 
 jobs:
   call-reusable-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3 
-      - name: Call Reusable Workflow
-        uses: ./.github/workflows/reusable-workflow.yml@main
-        with:
-          environment: ${{ github.event.inputs.environment }}
-          Secret: ${{ secrets.TOKEN }}
+    uses: ./.github/workflows/reusable-workflow.yml@main
+    with:
+      environment: ${{ github.event.inputs.environment }}
+      Secret: ${{ secrets.TOKEN }}
+    secrets: inherit
+
