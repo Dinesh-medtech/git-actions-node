@@ -21,5 +21,5 @@ jobs:
       - name: Environment
         run: echo "Environment is ${{ inputs.environment }}"
 
-      - name: Secret
-        run: echo "The secret is ${{ secrets.Secret }}"
+      # - name: Secret
+      #   run: echo "The secret is ${{ secrets.Secret }}"
